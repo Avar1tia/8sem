@@ -1,5 +1,5 @@
 ﻿using sportik.Classes;
-using sportik.Models;
+using SkladPrice.Models;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -73,12 +73,12 @@ namespace sportik.Pages
             {
                 if (currentmerch.id == 0)
                 {
-                    sportclubbd.GetContext().merch.Add(currentmerch);
+                    skladprice.GetContext().merch.Add(currentmerch);
                 }
 
-                using (DbContextTransaction dbContextTransaction = sportclubbd.GetContext().Database.BeginTransaction())
+                using (DbContextTransaction dbContextTransaction = skladprice.GetContext().Database.BeginTransaction())
                 {
-                    sportclubbd.GetContext().SaveChanges();
+                    skladprice.GetContext().SaveChanges();
                     MessageBox.Show("Информация сохранена!");
                     dbContextTransaction.Commit();
                 }
@@ -104,10 +104,31 @@ namespace sportik.Pages
                 if (ofd.FileName != null)
                 {
                     PreviewImage.Source = new BitmapImage(new Uri(ofd.FileName));
+
                 }
 
                 currentmerch.photo = $"/photo/{ofd.SafeFileName}";
             }
         }
+
+        private void Foto1(object sender, RoutedEventArgs e)
+        {
+            string source = Environment.CurrentDirectory;
+            if (ofd.ShowDialog() == true)
+            {
+                flag = true;
+                string sourthpath = ofd.SafeFileName;
+                newsourthpath = System.IO.Path.Combine(source.Replace("/bin/Debug", "/photo/"), sourthpath);
+
+                // Проверка на null перед установкой изображения
+                if (ofd.FileName != null)
+                {
+                    PreviewImage1.Source = new BitmapImage(new Uri(ofd.FileName));
+                }
+
+                currentmerch.photoperson = $"/photo/{ofd.SafeFileName}";
+            }
+        }
     }
+    
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using SkladPrice.Models;
 
 namespace sportik.Pages
 {
@@ -13,7 +14,7 @@ namespace sportik.Pages
         public Registration()
         {
             InitializeComponent();
-            Connect.modeldb = new Models.sportclubbd();
+            Connect.modeldb = new skladprice();
         }
 
         private void Registraciya_Click(object sender, RoutedEventArgs e)
@@ -41,7 +42,7 @@ namespace sportik.Pages
             }
 
             // Создаем нового пользователя
-            var newUser = new Models.users
+            var newUser = new users
             {
                 login = login,
                 password = password,

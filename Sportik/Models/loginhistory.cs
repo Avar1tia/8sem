@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace sportik.Models
+namespace SkladPrice.Models
 {
     using System;
     using System.Collections.Generic;

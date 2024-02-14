@@ -1,4 +1,4 @@
-﻿using sportik.Models;
+﻿using SkladPrice.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace sportik.Classes
 {
     class Connect
     {
-        public static sportclubbd modeldb;
+        public static skladprice modeldb;
     }
 }

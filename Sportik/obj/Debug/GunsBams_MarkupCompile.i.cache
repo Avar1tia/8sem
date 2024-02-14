@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\SystemX\Desktop\УП2023\GunsBams1233 — копия — копия — копия\Sportik\obj\Debug\
+C:\Users\SystemX\Desktop\sportik1\Sportik\obj\Debug\
 GunsBams
 none
 false
 DEBUG;TRACE
-C:\Users\SystemX\Desktop\УП2023\GunsBams1233 — копия — копия — копия\Sportik\App.xaml
-13-784249173
+C:\Users\SystemX\Desktop\sportik1\Sportik\App.xaml
+8-1065452720
 2-1223955081
-34295611989
-25697916241
-MainWindow.xaml;OneOrder.xaml;OrdersWindow.xaml;Pages\Authorization.xaml;Pages\EditMerch.xaml;Pages\EditOrders.xaml;Pages\HistoryPage.xaml;Pages\merches.xaml;Pages\OrdersPages.xaml;Pages\plitka.xaml;Pages\Registration.xaml;Pages\RootMerch.xaml;Pages\TalonOrder.xaml;
+29841471792
+25-1429951519
+MainWindow.xaml;Pages\Authorization.xaml;Pages\Calculator.xaml;Pages\EditMerch.xaml;Pages\EditOrders.xaml;Pages\Info.xaml;Pages\Registration.xaml;Pages\RootMerch.xaml;
 
-True
+False
 

@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registration">
 
-    <Grid>
+    <Grid Background="#777777">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock FontSize="25">Регистрация</TextBlock>
             <TextBlock>Логин</TextBlock>
@@ -17,7 +17,7 @@
             <PasswordBox Name="Password"></PasswordBox>
             <TextBlock>Подтвердите пароль</TextBlock>
             <PasswordBox Name="ConfirmPassword"></PasswordBox>
-            <Button Click="Registraciya_Click" Width="210">Зарегистрироваться</Button>
+            <Button Click="Registraciya_Click" Width="250" Style="{StaticResource CustomButtonStyle}">Зарегистрироваться</Button>
         </StackPanel>
     </Grid>
 </Page>

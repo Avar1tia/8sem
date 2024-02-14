@@ -1,5 +1,5 @@
 ﻿using sportik.Classes;
-using sportik.Models;
+using SkladPrice.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -55,12 +55,12 @@ namespace sportik.Pages
             {
                 if (currentorder.id == 0)
                 {
-                    sportclubbd.GetContext().orders.Add(currentorder);
+                    skladprice.GetContext().orders.Add(currentorder);
                 }
 
-                using (DbContextTransaction dbContextTransaction = sportclubbd.GetContext().Database.BeginTransaction())
+                using (DbContextTransaction dbContextTransaction = skladprice.GetContext().Database.BeginTransaction())
                 {
-                    sportclubbd.GetContext().SaveChanges();
+                    skladprice.GetContext().SaveChanges();
                     MessageBox.Show("Информация сохранена!");
                     dbContextTransaction.Commit();
                 }

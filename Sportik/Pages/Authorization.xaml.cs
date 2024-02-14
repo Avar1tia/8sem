@@ -1,6 +1,6 @@
 ﻿using sportik;
 using sportik.Classes;
-using sportik.Models;
+using SkladPrice.Models;
 using sportik.Pages;
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ namespace sportik.Pages
         public Authorization()
         {
             InitializeComponent();
-            Connect.modeldb = new sportclubbd();
+            Connect.modeldb = new skladprice();
             if(App.IsGone == true)
             {
                 duration = TimeSpan.FromMinutes(1);
@@ -60,26 +60,14 @@ namespace sportik.Pages
                     // Добавляем запись в историю входов
                     AddLoginHistoryEntry(userObj);
 
-                    sportclubbd.CurrentUser = userObj;
+                    skladprice.CurrentUser = userObj;
                     CurrentUser.UserRole = userObj.type_user.role;
                     switch (userObj?.id_type)
                     {
                         case 1:
                             Manager.MainFrame.Navigate(new RootMerch());
                             break;
-                        case 2:
-                            OrdersWindow ordersWindow = new OrdersWindow(); ;
-                            Window currentWindow = Window.GetWindow(this);
-                            currentWindow.Close();
-                            ordersWindow.Show();
-                            break;
-                        case 3:
-                            Manager.MainFrame.Navigate(new plitka());
-                            break;
-                        default:
-                            MessageBox.Show("Данные не обнаружены!", "Уведомление",
-                                MessageBoxButton.OK, MessageBoxImage.Warning);
-                            break;
+
                     }
                 }
             }

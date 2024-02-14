@@ -1,4 +1,5 @@
 ﻿
+using SkladPrice.Pages;
 using sportik.Classes;
 using sportik.Pages;
 using System;
@@ -31,20 +32,32 @@ namespace sportik
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new Authorization());
+            MainFrame.Navigate(new Info());
             Manager.MainFrame = MainFrame;
             InitializeTimer();
+            // Установка расположения окна по центру экрана
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            // Установка состояния окна на обычное (не развернутое и не свернутое)
+            WindowState = WindowState.Normal;
         }
         private void Autorization(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Authorization());
+        }  
+        
+        private void Calculator(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Calculator());
         }
-
+        private void root(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new RootMerch());
+        }
         private void InitializeTimer()
         {
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += Timer_Tick;
+            /*timer.Tick += Timer_Tick;*/
             StartSessionTimer();
         }
 
@@ -53,7 +66,7 @@ namespace sportik
             remainingTimeInSeconds = sessionTimeInMinutes * 60;
             timer.Start();
         }
-
+        /*
         private void Timer_Tick(object sender, EventArgs e)
         {
             remainingTimeInSeconds--;
@@ -76,12 +89,22 @@ namespace sportik
                 }
             }
         }
-
+        */
         private void Regestration(object sender, RoutedEventArgs e)
         {
 
             Manager.MainFrame.Navigate(new Registration());
 
+        }
+
+        private void Info(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new Info());
+        }        
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            // Закрываем приложение
+            Application.Current.Shutdown();
         }
     }
 }

@@ -7,25 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace sportik.Models
+namespace SkladPrice.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class sportclubbd : DbContext
+    public partial class skladprice : DbContext
     {
-        public sportclubbd()
-            : base("name=sportclubbd")
+        public skladprice()
+            : base("name=skladprice")
         {
         }
-        public static sportclubbd context;
+        public static skladprice context;
         internal static object CurrentUser;
-        public static sportclubbd GetContext()
+        public static skladprice GetContext()
         {
             if (context == null)
             {
-                context = new Models.sportclubbd();
+                context = new Models.skladprice();
             }
             return context;
         }

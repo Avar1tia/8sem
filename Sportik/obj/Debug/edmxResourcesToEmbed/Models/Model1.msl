@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище sportclubbdModelContainer" CdmEntityContainer="sportclubbd">
+  <EntityContainerMapping StorageEntityContainer="Хранилище skladpriceModelContainer" CdmEntityContainer="skladprice">
     <EntitySetMapping Name="loginhistory">
-      <EntityTypeMapping TypeName="sportclubbdModel.loginhistory">
+      <EntityTypeMapping TypeName="skladpriceModel.loginhistory">
         <MappingFragment StoreEntitySet="loginhistory">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="id_user" ColumnName="id_user" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="merch">
-      <EntityTypeMapping TypeName="sportclubbdModel.merch">
+      <EntityTypeMapping TypeName="skladpriceModel.merch">
         <MappingFragment StoreEntitySet="merch">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="photo" ColumnName="photo" />
@@ -21,11 +21,13 @@
           <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="photoperson" ColumnName="photoperson" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="orders">
-      <EntityTypeMapping TypeName="sportclubbdModel.orders">
+      <EntityTypeMapping TypeName="skladpriceModel.orders">
         <MappingFragment StoreEntitySet="orders">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="id_users" ColumnName="id_users" />
@@ -41,7 +43,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="point">
-      <EntityTypeMapping TypeName="sportclubbdModel.point">
+      <EntityTypeMapping TypeName="skladpriceModel.point">
         <MappingFragment StoreEntitySet="point">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -50,7 +52,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sostav">
-      <EntityTypeMapping TypeName="sportclubbdModel.sostav">
+      <EntityTypeMapping TypeName="skladpriceModel.sostav">
         <MappingFragment StoreEntitySet="sostav">
           <ScalarProperty Name="id_orders" ColumnName="id_orders" />
           <ScalarProperty Name="id_merch" ColumnName="id_merch" />
@@ -63,7 +65,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="status">
-      <EntityTypeMapping TypeName="sportclubbdModel.status">
+      <EntityTypeMapping TypeName="skladpriceModel.status">
         <MappingFragment StoreEntitySet="status">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="status_name" ColumnName="status_name" />
@@ -71,7 +73,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="sportclubbdModel.sysdiagrams">
+      <EntityTypeMapping TypeName="skladpriceModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -82,7 +84,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="type_user">
-      <EntityTypeMapping TypeName="sportclubbdModel.type_user">
+      <EntityTypeMapping TypeName="skladpriceModel.type_user">
         <MappingFragment StoreEntitySet="type_user">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="role" ColumnName="role" />
@@ -90,7 +92,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="users">
-      <EntityTypeMapping TypeName="sportclubbdModel.users">
+      <EntityTypeMapping TypeName="skladpriceModel.users">
         <MappingFragment StoreEntitySet="users">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="login" ColumnName="login" />

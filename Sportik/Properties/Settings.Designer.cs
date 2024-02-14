@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace sportik.Properties {
+namespace SkladPrice.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -1,5 +1,5 @@
 ﻿using sportik.Classes;
-using sportik.Models;
+using SkladPrice.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,7 +27,7 @@ namespace sportik.Pages
         public RootMerch()
         {
             InitializeComponent();
-            merchCollection = new ObservableCollection<merch>(sportclubbd.GetContext().merch.ToList());
+            merchCollection = new ObservableCollection<merch>(skladprice.GetContext().merch.ToList());
             MerchBD.ItemsSource = merchCollection;
         }
 
@@ -48,8 +48,8 @@ namespace sportik.Pages
             {
                 try
                 {
-                    sportclubbd.GetContext().merch.RemoveRange(MerchDell);
-                    sportclubbd.GetContext().SaveChanges();
+                    skladprice.GetContext().merch.RemoveRange(MerchDell);
+                    skladprice.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены!");
 
                     // Обновление ObservableCollection, что автоматически обновит DataGrid
@@ -66,18 +66,11 @@ namespace sportik.Pages
             }
         }
 
-        private void Orders(object sender, RoutedEventArgs e)
-        {
-            OrdersWindow ordersWindow = new OrdersWindow(); ;
-            Window currentWindow = Window.GetWindow(this);
-            currentWindow.Close();
-            ordersWindow.Show();
-        }
 
         private void RefreshPage()
         {
             merchCollection.Clear();
-            foreach (var merch in sportclubbd.GetContext().merch.ToList())
+            foreach (var merch in skladprice.GetContext().merch.ToList())
             {
                 merchCollection.Add(merch);
             }
@@ -88,9 +81,6 @@ namespace sportik.Pages
             RefreshPage();
         }
 
-        private void History(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new HistoryPage());
-        }
+
     }
 }

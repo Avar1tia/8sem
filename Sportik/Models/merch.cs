@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace sportik.Models
+namespace SkladPrice.Models
 {
     using System;
     using System.Collections.Generic;
@@ -27,6 +27,8 @@ namespace sportik.Models
         public string manufacturer { get; set; }
         public int price { get; set; }
         public Nullable<int> discount { get; set; }
+        public Nullable<int> count { get; set; }
+        public string photoperson { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sostav> sostav { get; set; }

@@ -8,25 +8,31 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditOrders">
 
-    <Grid>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel Margin="10">
-                <TextBlock Margin="0 2 0 0">Клиент</TextBlock>
-                <TextBlock Margin="0 9 0 0">Статус</TextBlock>
-                <TextBlock Margin="0 9 0 0">Пункт выдачи</TextBlock>
-                <TextBlock Margin="0 9 0 0">Код получения</TextBlock>
-                <TextBlock Margin="0 9 0 0">Цена</TextBlock>
-                <TextBlock Margin="0 9 0 0">Скидка</TextBlock>
-            </StackPanel>
-            <StackPanel Margin="10">
-                <TextBox Margin="0 0 0 0" Text="{Binding id_users}"></TextBox>
-                <TextBox Margin="0 5 0 0" Text="{Binding id_status}"></TextBox>
-                <TextBox Margin="0 5 0 0" Text="{Binding id_point}"></TextBox>
-                <TextBox Margin="0 5 0 0" Text="{Binding code}"></TextBox>
-                <TextBox Margin="0 5 0 0" Text="{Binding cost}"></TextBox>
-                <TextBox Margin="0 5 0 0" Text="{Binding discount}"></TextBox>
-                <Button Width="auto" Click="Save">Сохранить</Button>
-            </StackPanel>
-        </WrapPanel>
+    <Grid Background="#777777">
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Margin="10">
+                    <TextBlock Margin="0 5 0 0" FontSize="30">Клиент</TextBlock>
+                    <TextBlock Margin="0 5 0 0" FontSize="30">Статус</TextBlock>
+                    <TextBlock Margin="0 5 0 0" FontSize="30">Пункт выдачи</TextBlock>
+                    <TextBlock Margin="0 5 0 0" FontSize="30">Код получения</TextBlock>
+                    <TextBlock Margin="0 5 0 0" FontSize="30">Цена</TextBlock>
+                    <TextBlock Margin="0 5 0 0" FontSize="30">Скидка</TextBlock>
+                    <TextBlock Margin="0 5 0 0" FontSize="30">Количество</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="10" Width="200">
+                    <TextBox Margin="0 7 0 0" Text="{Binding id_users}" Height="35"></TextBox>
+                    <TextBox Margin="0 5 0 0" Text="{Binding id_status}" Height="35"></TextBox>
+                    <TextBox Margin="0 5 0 0" Text="{Binding id_point}" Height="35"></TextBox>
+                    <TextBox Margin="0 5 0 0" Text="{Binding code}" Height="35"></TextBox>
+                    <TextBox Margin="0 5 0 0" Text="{Binding cost}" Height="35"></TextBox>
+                    <TextBox Margin="0 5 0 0" Text="{Binding discount}" Height="35"></TextBox>
+                    <TextBox Margin="0 5 0 0" Text="{Binding count}" Height="35"></TextBox>
+
+                </StackPanel>
+            </WrapPanel>
+            <Button Width="250" Height="150" Click="Save" Style="{StaticResource CustomButtonStyle}" HorizontalAlignment="Center"> Сохранить
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>

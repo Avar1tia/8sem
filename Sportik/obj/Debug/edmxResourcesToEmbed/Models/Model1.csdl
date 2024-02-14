@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="sportclubbdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="skladpriceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="loginhistory">
     <Key>
       <PropertyRef Name="id" />
@@ -17,10 +17,12 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="dexcription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dexcription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="manufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="price" Type="Int32" Nullable="false" />
     <Property Name="discount" Type="Int32" />
+    <Property Name="count" Type="Int32" />
+    <Property Name="photoperson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="sostav" Relationship="Self.FK_sostav_merch" FromRole="merch" ToRole="sostav" />
   </EntityType>
   <EntityType Name="orders">
@@ -187,7 +189,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="sportclubbd" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="skladprice" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="loginhistory" EntityType="Self.loginhistory" />
     <EntitySet Name="merch" EntityType="Self.merch" />
     <EntitySet Name="orders" EntityType="Self.orders" />

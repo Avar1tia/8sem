@@ -5,21 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:sportik"
         mc:Ignorable="d"
-        Title="SportCLUB" MinHeight="450" MinWidth="800">
-    <Grid ShowGridLines="True">
+        Title="СкладPrice" MaxHeight="1080" MaxWidth="1920" MinHeight="1040" MinWidth="1920">
+    <Grid ShowGridLines="True" Background="#555555">
         <Grid.RowDefinitions>
             <RowDefinition Height="100" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
         </Grid.RowDefinitions>
-
-        <Border Background="#99CCFF"/>
-        <Image Source="/Res/logo.png" Grid.Row="0" HorizontalAlignment="Left" Height="100" Width="100" />
-        <TextBlock FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"  FontFamily="Arial Black" Grid.Row="0">Спортивный магазин</TextBlock>
-        <StackPanel>
-            <Button Grid.Row="0" HorizontalAlignment="Right" Name="autobnt" Click="Autorization" Width="100">Авторизация</Button>
-            <Button Grid.Row="0" HorizontalAlignment="Right" Name="reg" Click="Regestration" Width="100">Регестрация</Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Background="#555555"/>
+        <Image Source="/Res/logo.png" Grid.Row="0" HorizontalAlignment="Center" Height="100" Width="100" Margin="0,-2,0,2" />
+        <TextBlock Text="СКЛАДPRICE" Foreground="#7CFC00" FontSize="50" FontWeight="Bold" FontFamily="Impact" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1">
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="5" Color="Black" BlurRadius="3"/>
+            </TextBlock.Effect>
+        </TextBlock>
+       <!--
+        <StackPanel Grid.Column="1"  VerticalAlignment="Center">
+            <Button Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Name="autobnt" Click="Autorization" Width="100" Style="{StaticResource CustomButtonStyle}" Margin="0 1 0 10">Авторизация</Button>
+            <Button Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Name="reg" Click="Regestration" Width="100" Style="{StaticResource CustomButtonStyle}">Регестрация</Button>
         </StackPanel>
-        <Frame Grid.Row="1" Name="MainFrame"></Frame>
+        -->
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="0 30 0 10" VerticalAlignment="Center" Width="250" HorizontalAlignment="Center">
+            <Button Width="125" Name="Sklad" Style="{StaticResource CustomButtonStyle}" Click="root" Height="100" FontSize="20">Склад</Button>
+            <Button Width="125" Style="{StaticResource CustomButtonStyle}" Margin="0 50 0 10" Click="Calculator" Height="100" FontSize="20" >  Калькулятор</Button>
+            <Button Width="125" Style="{StaticResource CustomButtonStyle}" Margin="0 50 0 10" Click="Info" Height="100" FontSize="20">Инфо</Button>
+            <Button Width="125" Style="{StaticResource CustomButtonStyle}" Margin="0 50 0 10" Click="Exit" Height="100" FontSize="20">Выход</Button>
+        </StackPanel>
+        <Frame Grid.Row="1" Background="#666666" Name="MainFrame" Grid.Column="1"></Frame>
         <TextBlock x:Name="TimerTextBlock" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="0"/>
     </Grid>
 </Window>

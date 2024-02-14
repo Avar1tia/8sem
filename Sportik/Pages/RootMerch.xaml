@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:sportik.Pages"
       mc:Ignorable="d" 
+      Background="#666666"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RootMerch">
 
@@ -14,25 +15,26 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <DataGrid Name="MerchBD" AutoGenerateColumns="False" GridLinesVisibility="None">
+        <DataGrid Name="MerchBD" AutoGenerateColumns="False" GridLinesVisibility="None" Background="#444444">
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding TextColor}" Value="True">
-                            <Setter Property="Background" Value="Silver"/>
+                        <DataTrigger Binding="{Binding TextColor}" Value="False">
+                            <Setter Property="Background" Value="#666666"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
+
             <DataGrid.Columns>
-                <DataGridTemplateColumn Width="150">
+                <DataGridTemplateColumn Width="250">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Image Width="150">
+                                <Image >
                                     <Image.Source>
-                                        <Binding Path="photo">
-                                            <Binding.TargetNullValue>
+                                        <Binding Path="photo" >
+                                            <Binding.TargetNullValue >
                                                 <ImageSource>/Photo/Zaglushka.png</ImageSource>
                                             </Binding.TargetNullValue>
                                         </Binding>
@@ -42,15 +44,18 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="1*">
+                <DataGridTemplateColumn Width="350">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel VerticalAlignment="Center">
-                                <TextBlock Text="{Binding name}" Style="{StaticResource large}"></TextBlock>
-                                <TextBlock Text="{Binding dexcription}" Style="{StaticResource small}"></TextBlock>
-                                <TextBlock Text="{Binding manufacturer}" Style="{StaticResource small}"></TextBlock>
-                                <TextBlock Text="{Binding price}" TextDecorations="{Binding Arrow}" Style="{StaticResource large}"></TextBlock>
-                                <TextBlock Text="{Binding newcost}" Style="{StaticResource large}"></TextBlock>
+                            <StackPanel VerticalAlignment="Center" Background="#777777" MaxHeight="500" Margin="5,0">
+                                <TextBlock Text="{Binding name}" Style="{StaticResource MyTextStyle}" FontSize="50" Margin="0,0,0,5" />
+                                <TextBlock Text="{Binding dexcription}" Style="{StaticResource MyTextStyleSmall}" FontSize="16" Margin="0,0,0,2"/>
+                                <TextBlock Text="{Binding manufacturer}" Style="{StaticResource MyTextStyleSmall}" FontSize="16" Margin="0,0,0,2"/>
+                                <TextBlock Text="{Binding price}" TextDecorations="{Binding Arrow}" Style="{StaticResource MyTextStyleBig}" FontSize="30" Margin="0,0,0,2"/>
+                                <TextBlock Text="{Binding newcost}" Style="{StaticResource MyTextStyleNew}" FontSize="35" Margin="0,0,0,2"/>
+                                <TextBlock Text="Количество" Style="{StaticResource MyTextStyle}" FontSize="20" Margin="0,0,0,2"/>
+                                <TextBlock Text="{Binding count}" Style="{StaticResource MyTextStyleBig}" FontSize="24" Margin="0,0,0,2"/>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding discount, StringFormat={}скидка: {0:0.##}%}" FontSize="50" Foreground="Red"></TextBlock>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -58,31 +63,39 @@
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Name="BntEdit" Click="Edit" Width="150">Редактировать</Button>
+                            <Button Name="BntEdit" Click="Edit" Width="400" Height="75" Style="{StaticResource CustomButtonStyle}" FontSize="30">Редактировать</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Name="BntDell" Click="Delete" Width="150">Удалить</Button>
+                            <Button Name="BntDell" Click="Delete" Width="400" Height="75"  Style="{StaticResource CustomButtonStyle}" FontSize="40" >Удалить</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="1*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding discount, StringFormat={}скидка: {0:0.##}%}" ></TextBlock>
+                            <StackPanel>
+                                <Image Width="Auto">
+                                    <Image.Source>
+                                        <Binding Path="photoperson">
+                                            <Binding.TargetNullValue >
+                                                <ImageSource>/Photo/Zaglushka.png</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                            </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Click="Add" Width="120">Добавить товар</Button >
-            <Button Click="Orders" Width="155">Просмотреть заказы</Button>
-            <Button Click="Ref" >Обновить</Button>
-            <Button Click="History" Width="120" >История входа</Button>
+            <Button Click="Add" Width="120" Style="{StaticResource CustomButtonStyle}">Добавить товар</Button >
+            <Button Click="Ref" Width="120" Style="{StaticResource CustomButtonStyle}">Обновить</Button>
         </StackPanel>
     </Grid>
 </Page>
